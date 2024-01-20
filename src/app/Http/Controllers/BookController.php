@@ -9,6 +9,10 @@ use App\Http\Requests\BookRequest;
 
 class BookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function list()
     {
         $items = Book::orderBy('name', 'asc')->get();

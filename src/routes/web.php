@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthorController; // Add this line
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -21,3 +22,7 @@ Route::post('/books/put', [BookController::class, 'put']);
 Route::get('/books/update/{book}', [BookController::class, 'update']);
 Route::post('/books/patch/{book}', [BookController::class, 'patch']);
 Route::post('/books/delete/{book}', [BookController::class, 'delete']);
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/auth', [AuthController::class, 'authenticate']);
+Route::get('/logout', [AuthController::class, 'logout']);

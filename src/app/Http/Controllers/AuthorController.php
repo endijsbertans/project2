@@ -7,6 +7,10 @@ use App\Models\Author;
 
 class AuthorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     // display all authors
 
 
@@ -65,4 +69,5 @@ class AuthorController extends Controller
         $author->delete();
         return redirect('/authors');
     }
+    
 }
