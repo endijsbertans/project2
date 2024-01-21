@@ -9,6 +9,10 @@ class AuthController extends Controller
 {
     public function login()
     {
+//         echo 'my_user_name : <input value="'
+// . \Illuminate\Support\Facades\Hash::make('my_password_123')
+// . '">';
+// exit();
 
         return view(
             'auth.login',
